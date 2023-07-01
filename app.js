@@ -1,5 +1,4 @@
 $(function () {
-
     const btn = $("#addTodo")
     btn.click(function() {
         const todo_task = $("#input")
@@ -7,17 +6,13 @@ $(function () {
         todo_task.val("")
     })
 
-    // $("input[type=checkbox]").on("change", function () {
-    //     if($(this).is(":checked")) {
-    //         $(this).parent().css("text-decoration", "line-through")
-    //     }
-    // })
-
     $(document).on("change", "input[type=checkbox]", function() {
         if ($(this).is(":checked")) {
             $(this).parent().css("text-decoration", "line-through")
+            $(this).parent().css("color", "#ccc")
         } else {
             $(this).parent().css("text-decoration", "none")
+            $(this).parent().css("color", "#000")
         }
     })
 })
